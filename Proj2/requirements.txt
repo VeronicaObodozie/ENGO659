@@ -1,0 +1,4 @@
+PIL
+Numpy
+Open CV (cv2)
+matplotlib\
