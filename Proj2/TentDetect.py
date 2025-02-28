@@ -62,7 +62,7 @@ from matplotlib import pyplot as plt
 img = cv2.imread('cropped_image.png')
 
 # 1. Dilate cropped image
-# Math Morphology, dilation, method used to increase tent sizzes
+# Math Morphology, dilation, method used to increase tent sizes
 
 # Creating 3 x 3 structuring element
 strel3x3= cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
@@ -85,7 +85,7 @@ edges = cv2.Canny(gausBlur,100,200)
 #-------------------------------------Counting algoritm------------------------------------#
 # Counting detected tents was done using the built-in findContours method
 (cnt, hierarchy) = cv2.findContours(edges.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-# The contours are displayed on the image, along with the number of tents in the tittle.
+# The contours are displayed on the image, along with the number of tents in the title.
 plt.figure(1)
 cv2.drawContours(img, cnt, -1, (0, 255, 0), 2)
 plt.title('Detected: '+ str(len(cnt))+' Tents in Region')
