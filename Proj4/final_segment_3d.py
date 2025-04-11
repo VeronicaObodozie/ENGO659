@@ -117,7 +117,7 @@ for dicom_file in dicom_brain_files:
     image = (image - np.min(image)) / (np.max(image) - np.min(image))
 
     #  Chan-Vese Active Contour 적용
-    segmented_brain = morphological_chan_vese(image, num_iter=300, smoothing=1, lambda1=0.8, lambda2=1.2)
+    segmented_brain = morphological_chan_vese(image, num_iter=300, smoothing=1, lambda1=1, lambda2=1)
 
     #  마스크 반전
     if np.sum(segmented_brain) / segmented_brain.size > 0.5:  
